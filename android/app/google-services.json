@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "239722356269",
+    "project_id": "flutter-crashlytics-231df",
+    "storage_bucket": "flutter-crashlytics-231df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239722356269:android:b57d1a85336c2b5e8622a4",
+        "android_client_info": {
+          "package_name": "com.example.crashlytics_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "239722356269-4r53m1qbkiqlon51p0s73bi5jf71g32o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcn-dBgMc9Ec-UHvx7NK0ApKU5fCW9RIQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "239722356269-4r53m1qbkiqlon51p0s73bi5jf71g32o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
