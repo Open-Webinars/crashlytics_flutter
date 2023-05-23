@@ -1,9 +1,9 @@
-import 'package:crashlytics_flutter/crashlytics_home.dart';
-import 'package:crashlytics_flutter/firebase_options.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+import 'package:crashlytics_flutter/crashlytics_home.dart';
+import 'package:crashlytics_flutter/firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

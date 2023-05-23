@@ -1,4 +1,5 @@
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 
 class CrashlyticsHome extends StatelessWidget {
@@ -6,6 +7,7 @@ class CrashlyticsHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final FirebaseRemoteConfig remoteConfig = FirebaseRemoteConfig.instance;
     return Scaffold(
         appBar: AppBar(
           title: const Text('Firebase Core example app'),
@@ -59,6 +61,34 @@ class CrashlyticsHome extends StatelessWidget {
                   FirebaseCrashlytics.instance.crash();
                 },
                 child: const Text('Generar error'),
+              ),
+              ElevatedButton(
+                onPressed: () async {
+                  final defaults = <String, dynamic>{
+                    'welcome_message': 'Welcome to my app!',
+                    'init_sesion': true,
+                  };
+                  await remoteConfig.setDefaults(defaults);
+                },
+                child: const Text('Enviar Remote Config'),
+              ),
+              ElevatedButton(
+                onPressed: () async {
+                  bool isTrue = await remoteConfig.fetchAndActivate();
+                  print(isTrue);
+                  String welcomeMessage =
+                      remoteConfig.getString('welcome_message');
+                  String buttonText = remoteConfig.getString('button_text');
+
+                  print("$welcomeMessage | $buttonText");
+                },
+                child: const Text('Recibir Remote Config'),
+              ),
+              ElevatedButton(
+                onPressed: () async {
+                  await remoteConfig.fetchAndActivate();
+                },
+                child: const Text('Actualizar Remote Config'),
               ),
             ],
           ),
